@@ -1,0 +1,26 @@
+include layouts/mainLayout
+
+.container
+    h1.mt-3
+    div.mt-3
+        h1 #{title}
+    div.m-4.border
+        div.m-4
+            h2 #{pageTitle}
+
+            if questions.length == 0
+                h2 Sorry no questions
+            else
+                each item in questions
+                    .row
+                        .col
+                            p= item.q
+                        .col
+                            select(id=item.id name='item.id')
+                                option(value='0' selected='selected') A little
+                                option(value='1' selected='selected') Sometimes
+                                option(value='2' selected='selected') As much as possible
+            form(action='/home' method='post')
+                button(type='submit') Submit form
+                //button.btn.btn-primary(type='submit') Submit form
+

@@ -1,0 +1,28 @@
+include layouts/mainLayout
+h1 #{resultsTitle}
+
+    table.table.table-bordered
+        thead
+            tr
+                th(scope='col') Personality Type
+                th(scope='col') Total Points
+                th(scope='col') Percentage
+                th(scope='col') Description
+form(action='/homeResults' method='post')
+    button(type='submit') Retake Survey
+    //button.btn.btn-primary(type='submit') Retake Survey
+        //tbody
+             each rItem in results
+                tr
+                    td blah
+                    td Otto
+                    td @mdo
+                tr
+                    th(scope='row') 2
+                    td Jacob
+                    td Thornton
+                    td @fat
+                tr
+                    th(scope='row') 3
+                    td(colspan='2') Larry the Bird
+                    td @twitter
